@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "json-stream"
+version = "0.1.0"
+description = "Real-time parsing of incomplete JSON strings from streams."
+authors = ["Almog Baku <almog.baku@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/AlmogBaku/json-stream"
+keywords = ["json", "stream", "partial"]
+
+[compatibility]
+python = "^3.8"
+
+[dependencies]
+# No third-party dependencies
+
+[dev-dependencies]
+pytest = "^6.2"
+
+[scripts]
+# Add any scripts or entry points if needed
+
+[package]
+include = ["*.py"]
+
