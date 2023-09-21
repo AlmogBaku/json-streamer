@@ -30,14 +30,12 @@ pip install json-stream
 ```python
 from json_stream import loads
 
-
 # Define a stream of JSON data
 def stream_json():
     json_string = '{"field1": "value1", "field2": 42}'
     chunk_size = 4
     for i in range(0, len(json_string), chunk_size):
         yield json_string[i:i + chunk_size]
-
 
 # Create a stream generator
 mystream = stream_json()
