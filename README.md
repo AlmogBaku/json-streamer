@@ -1,6 +1,6 @@
-# JSON Stream Parser
+# JSON Streamer
 
-JSON Stream Parser is an opportunistic parser designed for processing incomplete JSON strings in real-time from streams.
+JSON Streamer is an opportunistic parser designed for processing incomplete JSON strings in real-time from streams.
 
 This can be very useful for parsing JSON strings from network streams, such as websockets and don't want to wait for
 the entire JSON string to be received before acting on it.
@@ -14,7 +14,7 @@ package just for that)
 Install the package using pip:
 
 ```bash
-pip install json-stream
+pip install json-streamer
 ```
 
 ## Features
@@ -28,7 +28,8 @@ pip install json-stream
 ### Basic Usage
 
 ```python
-from json_stream import loads
+from json_streamer import loads
+
 
 # Define a stream of JSON data
 def stream_json():
@@ -36,6 +37,7 @@ def stream_json():
     chunk_size = 4
     for i in range(0, len(json_string), chunk_size):
         yield json_string[i:i + chunk_size]
+
 
 # Create a stream generator
 mystream = stream_json()
@@ -55,7 +57,7 @@ The `loads()` function returns a generator that yields tuples of `(ParseState, J
 Utilize the parser with a generator receiver for additional control:
 
 ```python
-from json_stream import loads
+from json_streamer import loads
 
 # Initialize the parser generator
 parser = loads()

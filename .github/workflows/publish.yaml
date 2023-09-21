@@ -48,12 +48,24 @@ jobs:
     name: "Release and publish the version"
     needs: [ tests, version ]
     runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/json-streamer
+    permissions:
+      id-token: write  # IMPORTANT: this permission is mandatory for trusted publishing
     steps:
-      - name: "Publish to PyPi"
-        uses: pypa/gh-action-pypi-publish@v1.5.0
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          user: __token__
-          password: ${{ secrets.PYPI_TOKEN }}
+          python-version: '3.8'
+      - name: Build SDist
+        env:
+          BUILD_VERSION: "${{ needs.version.outputs.version }}"
+        run: pipx run build --sdist --wheel
+      - name: "Publish to PyPi"
+        uses: pypa/gh-action-pypi-publish@v1.8.10
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Update changelog

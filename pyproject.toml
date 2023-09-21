@@ -3,14 +3,14 @@ requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "json-stream"
+name = "json-streamer"
 version = "0.1.0"
-description = "Real-time parsing of incomplete JSON strings from streams."
+description = "A JSON parser capable of parsing incomplete JSON strings from streams/generators."
 authors = ["Almog Baku <almog.baku@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-repository = "https://github.com/AlmogBaku/json-stream"
-keywords = ["json", "stream", "partial"]
+repository = "https://github.com/AlmogBaku/json-streamer"
+keywords = ["json", "stream", "partial", "generator"]
 
 [compatibility]
 python = "^3.8"

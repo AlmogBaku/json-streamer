@@ -1,5 +1,5 @@
 import unittest
-from json_stream import loads, ParseState
+from json_streamer import loads, ParseState
 
 
 def stream_json():
