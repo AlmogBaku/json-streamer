@@ -1,7 +1,11 @@
 name: Publish to PyPi
 
 on:
-  push: ~
+  push:
+    paths:
+      - '**.py'
+      - '!**/tests/**'
+  workflow_dispatch: ~
 
 permissions:
   contents: write

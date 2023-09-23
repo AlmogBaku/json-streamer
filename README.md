@@ -76,4 +76,4 @@ it attempts to match these with closing symbols to parse available JSON objects.
 
 ## License
 
-This project is licensed under the terms of the MIT license.
+This project is licensed under the terms of the [MIT license](LICENSE).
