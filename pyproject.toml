@@ -4,27 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "json-streamer"
-version = "0.1.0"
+version = "0.0.0-dev"
 description = "A JSON parser capable of parsing incomplete JSON strings from streams/generators."
 authors = [{name = "Almog Baku", email = "almog.baku@gmail.com"}]
 license = {text = "MIT"}
 readme = "README.md"
 keywords = ["json", "stream", "partial", "generator"]
-
-[compatibility]
-python = "^3.8"
-
-[dependencies]
-# No third-party dependencies
-
-[dev-dependencies]
-pytest = "^6.2"
-
-[scripts]
-# Add any scripts or entry points if needed
-
-[package]
-include = ["*.py"]
+requires-python = ">=3.8"
 
 [project.urls]  # Optional
 "Homepage" = "https://github.com/AlmogBaku/json-streamer"
