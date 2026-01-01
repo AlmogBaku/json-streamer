@@ -12,7 +12,15 @@ readme = "README.md"
 keywords = ["json", "stream", "partial", "generator"]
 requires-python = ">=3.8"
 
-[project.urls]  # Optional
+[project.optional-dependencies]
+dev = ["pytest>=7.0.0"]
+
+[project.urls]
 "Homepage" = "https://github.com/AlmogBaku/json-streamer"
 "Bug Reports" = "https://github.com/AlmogBaku/json-streamer/issues"
 "Source" = "https://github.com/AlmogBaku/json-streamer/"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+]

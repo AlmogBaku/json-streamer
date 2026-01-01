@@ -5,3 +5,5 @@ build/
 dist
 json_streamer.egg-info/
 .benchmarks
+.venv
+venv

@@ -1,5 +1,5 @@
 import json
-from typing import List, Dict, Tuple, Optional, Generator
+from typing import List, Tuple, Optional, Generator, Any
 
 from .parser import Parser, ParseState
 
@@ -13,7 +13,7 @@ class JsonParser(Parser):
     def opening_symbols() -> List[chr]:
         return ['{', '[', '"']
 
-    def raw_decode(self, s: str) -> Tuple[Dict, int]:
+    def raw_decode(self, s: str) -> Tuple[Any, int]:
         return self._decoder.raw_decode(s)
 
 

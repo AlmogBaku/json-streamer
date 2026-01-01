@@ -71,8 +71,10 @@ for chunk in stream_json():
 
 ## How it Works
 
-The parser internally maintains a stack of opening symbols like brackets, braces, and quotes. Upon each new data chunk,
-it attempts to match these with closing symbols to parse available JSON objects.
+The parser keeps a stack of opening symbols (brackets, braces, quotes) and tracks whether it is inside a string so
+structural characters inside strings are ignored. Each chunk is scanned only for structural characters (via a regex)
+to update the stack efficiently, then the parser attempts to decode the full buffer or a "completed" buffer with the
+required closing symbols appended to produce partial results.
 
 ## License
 
